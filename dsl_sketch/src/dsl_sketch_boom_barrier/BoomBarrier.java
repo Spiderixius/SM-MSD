@@ -11,26 +11,30 @@ public class BoomBarrier extends FluentMachine{
 	
 	// Constants
 	private static final String BARRIER_DOWN = "BARRIER_DOWN";
+	private static final String BARRIER_GOING_DOWN = "BARRIER_GOING_DOWN";
+
 	private static final String BARRIER_UP = "BARRIER_UP";
+	private static final String BARRIER_GOING_UP = "BARRIER_GOING_UP";
+	
 	private static final String TICKET_SCAN = "TICKET_SCAN";
 	private static final String TICKET_ACCEPT = "TICKET_ACCEPT";
 	
 	private static final int WAIT = 10;
 	private static final boolean WAIT_COMPLETE = true;
 
-
+	private Builder builder = new Builder();
+	
+	
 	// State machine definition
 	protected void build() {
-		initialState(BARRIER_DOWN).
-		transition(TICKET_SCAN).to(TICKET_ACCEPT).setState(BARRIER_UP).
-		transition(WAIT).to(WAIT_COMPLETE).setState(BARRIER_DOWN);
+		builder.setState(BARRIER_DOWN).
+			transition(TICKET_SCAN).to(TICKET_ACCEPT).
+			transition(BARRIER_GOING_UP).
+		setState(BARRIER_UP).
+		    transition(WAIT).to(WAIT_COMPLETE).
+		    transition(BARRIER_GOING_DOWN).
+	    setState(BARRIER_DOWN);
 	}
-
-	private Builder initialState(String barrierDown) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 	public static class Builder {
 
@@ -59,7 +63,6 @@ public class BoomBarrier extends FluentMachine{
 			// TODO Auto-generated method stub
 			return null;
 		}
-
 		
 	}
 
