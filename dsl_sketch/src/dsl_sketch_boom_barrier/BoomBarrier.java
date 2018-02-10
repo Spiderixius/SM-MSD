@@ -1,5 +1,12 @@
 package dsl_sketch_boom_barrier;
 
+/**
+ * 
+ * @author spider
+ * 
+ */
+
+
 public class BoomBarrier extends FluentMachine{
 	
 	// Constants
@@ -9,13 +16,14 @@ public class BoomBarrier extends FluentMachine{
 	private static final String TICKET_ACCEPT = "TICKET_ACCEPT";
 	
 	private static final int WAIT = 10;
-	private static final boolean WAIT_COMPLETE = false;
+	private static final boolean WAIT_COMPLETE = true;
 
 
 	// State machine definition
 	protected void build() {
 		initialState(BARRIER_DOWN).
-		transition(TICKET_SCAN).to(TICKET_ACCEPT).setState(BARRIER_UP).transition(WAIT).to(WAIT_COMPLETE).setState(BARRIER_DOWN);
+		transition(TICKET_SCAN).to(TICKET_ACCEPT).setState(BARRIER_UP).
+		transition(WAIT).to(WAIT_COMPLETE).setState(BARRIER_DOWN);
 	}
 
 	private Builder initialState(String barrierDown) {
@@ -31,15 +39,11 @@ public class BoomBarrier extends FluentMachine{
 			return null;
 		}
 		
-
-
 		public Builder to(boolean waitComplete) {
 			return null;
 			// TODO Auto-generated method stub
 			
 		}
-
-
 
 		public Builder transition(int wait) {
 			// TODO Auto-generated method stub
