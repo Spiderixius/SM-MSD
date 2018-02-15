@@ -15,6 +15,7 @@ public class Transition {
 		return targetState;
 	}
 	
+	// 
 	protected boolean isApplicable() {
         return true;
     }
