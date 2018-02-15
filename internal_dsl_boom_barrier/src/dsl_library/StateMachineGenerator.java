@@ -9,8 +9,6 @@ public abstract class StateMachineGenerator {
 	protected abstract void build();
 
 	
-	
-
 	public StateMachineGenerator state(String name) {
 		
 		return this;
