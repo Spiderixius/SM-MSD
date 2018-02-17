@@ -17,22 +17,22 @@ public class StateMachineMetaModel {
 	}
 	
 	
-	public void stateInfo() {
+	public void machineInfo() {
 		System.out.println(toString());
 	}
 	
 	
 	@Override
 	public String toString() {
-		String stateInfo = "State Machine created.\nFollowing are the states: \n";
+		String stateInfo = "State Machine created.\nFollowing is the state machine: \n";
 		
 		for (State state : states) {
 			stateInfo += "\nState: " + state.getStateName() + "\nTransition To: ";
 			for (Transition transition : state.getTransitions()) {
 				stateInfo += "\n " + transition.toString();
 			}
+			
 		}
-				
 		return stateInfo;
 	}
 	
@@ -50,7 +50,7 @@ public class StateMachineMetaModel {
 				currentState = state;
 			}
 		}
-		System.out.println("\nCurrent state: " + currentState.getStateName() + "\n");
+		System.out.println("|\tCurrent state: " + currentState.getStateName());
 	}
 	
 	
