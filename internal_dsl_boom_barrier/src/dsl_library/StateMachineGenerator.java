@@ -13,9 +13,6 @@ public class StateMachineGenerator {
 		metaModel = new StateMachineMetaModel();
 	}
 	
-
-	
-	
 	public StateMachineGenerator state(String stateName) {
 		if (currentState != null) {
 			flushTransition();
@@ -39,9 +36,15 @@ public class StateMachineGenerator {
 		return this;
 	}
 
-	public StateMachineGenerator ifTicketValid(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public StateMachineGenerator ifTicketValid(boolean validity) {
+		
+		for (Transition transition : currentState.getTransitions()) {
+			if (transition.getPendingEvent().equals(pendingEvent)){
+				transition.setValidTicket(validity);
+			}
+		}
+		
+		return this;
 	}
 
 	public StateMachineGenerator whenTimeOut(String name) {
@@ -72,5 +75,7 @@ public class StateMachineGenerator {
 		flushTransition();
 		metaModel.addState(currentState);
 	}
+
+	
 	
 }

@@ -12,7 +12,6 @@ public class StateMachineMetaModel {
 		states = new ArrayList<>();
 	}
 
-
 	public void addState(State newState) {
 		states.add(newState);
 	}
@@ -25,7 +24,7 @@ public class StateMachineMetaModel {
 	
 	@Override
 	public String toString() {
-		String stateInfo = "State Machine " + stateName + " created.\nFollowing are the states: \n";
+		String stateInfo = "State Machine created.\nFollowing are the states: \n";
 		
 		for (State state : states) {
 			stateInfo += "\nState: " + state.getStateName() + "\nTransition To: ";
@@ -37,6 +36,9 @@ public class StateMachineMetaModel {
 		return stateInfo;
 	}
 	
+	/** TODO: Implement the processMachine method
+	 *  The processMachine method is the interpreter that can interpret my model.
+	 */
 	public void processMachine() {
 		
 	}
