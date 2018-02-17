@@ -4,7 +4,7 @@ import internal_dsl_boom_barrier.MachineRunner;
 
 /**
  * This class represents the transition object that a state can have
- * All logic regarding transition is in here and contains a name 
+ * All logic regarding transition is in here and contains a name, condition, target transition and pending transition
  * 
  * Inspired by: https://github.com/ulrikpaghschultz/MDSD/blob/master/src/statemachine/year2/framework/Transition.java
  * 

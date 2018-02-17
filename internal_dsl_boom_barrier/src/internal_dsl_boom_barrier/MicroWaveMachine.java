@@ -3,9 +3,16 @@ package internal_dsl_boom_barrier;
 import dsl_library.StateMachineGenerator;
 import dsl_library.StateMachineMetaModel;
 
+/**
+ * The DSL definition for a microwave machine
+ * 
+ * Inspired by: https://github.com/ulrikpaghschultz/MDSD/blob/master/src/statemachine/year3/microwaveoven/MicrowaveMachine.java
+ * 
+ * @author spider
+ *
+ */
 public class MicroWaveMachine extends StateMachineGenerator {
-	    
-	
+	  
 	public StateMachineMetaModel generateMicroWaveMachine() {
         return state("INACTIVE").
 		         transition("START").to("COOKING").
