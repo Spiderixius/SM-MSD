@@ -21,7 +21,7 @@ public class State {
 	private List<Transition> transitions;
 	
 	/**
-	 * State is instantiated with a state name and the list of the transitions 
+	 * State is initialised with a state name and the list of the transitions 
 	 * @param stateName - Name of the state
 	 */
 	public State(String stateName) {
