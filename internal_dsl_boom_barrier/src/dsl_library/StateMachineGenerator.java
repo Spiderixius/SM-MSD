@@ -1,5 +1,6 @@
 package dsl_library;
 
+
 public class StateMachineGenerator {
 	
 	
@@ -12,10 +13,7 @@ public class StateMachineGenerator {
 		metaModel = new StateMachineMetaModel();
 	}
 	
-//	public StateMachineGenerator build(String initialState) {
-//		metaModel = new StateMachineMetaModel(initialState);
-//		return this;
-//	}
+
 	
 	
 	public StateMachineGenerator state(String stateName) {

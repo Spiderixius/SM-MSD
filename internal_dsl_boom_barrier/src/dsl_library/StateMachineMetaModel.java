@@ -4,14 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StateMachineMetaModel {
-	
+
 	private List<State> states;
 	private String stateName;
-	
-//	public StateMachineMetaModel(String stateName) {
-//		this.stateName = stateName;
-//		states = new ArrayList<>();
-//	}
 	
 	public StateMachineMetaModel() {
 		states = new ArrayList<>();
