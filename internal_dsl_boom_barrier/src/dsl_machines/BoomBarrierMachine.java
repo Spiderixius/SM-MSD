@@ -1,4 +1,4 @@
-package internal_dsl_boom_barrier;
+package dsl_machines;
 
 import dsl_library.StateMachineGenerator;
 import dsl_library.StateMachineMetaModel;

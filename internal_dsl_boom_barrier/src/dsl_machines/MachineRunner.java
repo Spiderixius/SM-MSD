@@ -1,4 +1,4 @@
-package internal_dsl_boom_barrier;
+package dsl_machines;
 
 import dsl_library.StateMachineMetaModel;
 
@@ -35,7 +35,7 @@ public class MachineRunner {
 		System.out.println("Event: START");
 		metaModelMicroWave.processEvent("START");
 		System.out.println("\n");
-	
+
 		/**
 		 * Boom Barrier Machine
 		 */
