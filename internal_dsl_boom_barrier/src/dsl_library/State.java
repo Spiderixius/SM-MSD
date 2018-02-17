@@ -25,4 +25,17 @@ public class State {
 	public void addTransition(Transition newTransition) {
 		transitions.add(newTransition);
 	}
+	
+	public String processEvent(String eventName) {
+		for (Transition transition : transitions) {
+			if (transition.getPendingEvent().equals(eventName)) {
+				if (transition.isApplicable()) {
+					return transition.getTargetTransition();
+				} else {
+					return stateName;
+				}
+			}
+		}
+		return stateName;
+	}
 }

@@ -3,10 +3,14 @@ package dsl_library;
 public class Transition {
 	
 	private String targetTransition;
+	public String getTargetTransition() {
+		return targetTransition;
+	}
+
 	private String pendingEvent;
 	
 	
-	private boolean isValidTicket;
+	private boolean condition = true;
 
 	
 	public Transition(String targetTransition, String pendingEvent) {
@@ -22,12 +26,12 @@ public class Transition {
 		
 	}
 	
-	public boolean isValidTicket() {
-		return isValidTicket;
+	public boolean getCondition() {
+		return condition;
 	}
 
-	public void setValidTicket(boolean isValidTicket) {
-		this.isValidTicket = isValidTicket;
+	public void setCondition(boolean condition) {
+		this.condition &= condition;
 	}
 	
 	public String getPendingEvent() {
@@ -36,6 +40,10 @@ public class Transition {
 
 	public void setPendingEvent(String pendingEvent) {
 		this.pendingEvent = pendingEvent;
+	}
+
+	public boolean isApplicable() {
+		return true;
 	}
 
 	

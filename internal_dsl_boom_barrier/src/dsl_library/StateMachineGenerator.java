@@ -3,7 +3,6 @@ package dsl_library;
 
 public class StateMachineGenerator {
 	
-	
 	private StateMachineMetaModel metaModel;
 	private State currentState;
 	private String targetTransition;
@@ -40,7 +39,7 @@ public class StateMachineGenerator {
 		
 		for (Transition transition : currentState.getTransitions()) {
 			if (transition.getPendingEvent().equals(pendingEvent)){
-				transition.setValidTicket(validity);
+				transition.setCondition(validity);
 			}
 		}
 		
@@ -50,10 +49,6 @@ public class StateMachineGenerator {
 	public StateMachineGenerator whenTimeOut(String name) {
 		// TODO Auto-generated method stub
 		return this;
-	}
-	
-	public void stateInfo() {
-		metaModel.stateInfo();
 	}
 
 	public void flushTransition() {	
@@ -71,9 +66,10 @@ public class StateMachineGenerator {
 		pendingEvent = "";
 	}
 
-	public void end() {
+	public StateMachineMetaModel end() {
 		flushTransition();
 		metaModel.addState(currentState);
+		return metaModel;
 	}
 
 	

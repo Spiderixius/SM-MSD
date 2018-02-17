@@ -6,7 +6,7 @@ import java.util.List;
 public class StateMachineMetaModel {
 
 	private List<State> states;
-	private String stateName;
+	private State currentState;
 	
 	public StateMachineMetaModel() {
 		states = new ArrayList<>();
@@ -39,8 +39,19 @@ public class StateMachineMetaModel {
 	/** TODO: Implement the processMachine method
 	 *  The processMachine method is the interpreter that can interpret my model.
 	 */
-	public void processMachine() {
+	public void processEvent(String eventName) {
+		if (currentState == null) {
+			currentState = states.get(0);
+		}
+		String targetState = currentState.processEvent(eventName);
 		
+		for (State state : states) {
+			if (state.getStateName().equals(targetState)) {
+				currentState = state;
+			}
+		}
+		System.out.println("\nCurrent state: " + currentState.getStateName() + "\n");
 	}
+	
 	
 }
