@@ -1,7 +1,5 @@
 package dsl_library;
 
-import internal_dsl_boom_barrier.MachineRunner;
-
 /**
  * This class represents the transition object that a state can have
  * All logic regarding transition is in here and contains a name, condition, target transition and pending transition

@@ -52,7 +52,8 @@ public class StateMachineMetaModel {
 				currentState = state;
 			}
 		}
-		System.out.println("|\tCurrent state: " + currentState.getStateName());
+		System.out.println(currentState.getStateName());
+		
 	}
 	
 	/**

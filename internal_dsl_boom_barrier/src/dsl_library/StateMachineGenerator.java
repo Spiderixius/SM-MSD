@@ -73,11 +73,12 @@ public class StateMachineGenerator {
 	 * @return
 	 */
 	public StateMachineGenerator ifTicketValid(boolean validity) {
-		
+		flushTransition();
 		for (Transition transition : currentState.getTransitions()) {
 			if (transition.getPendingEvent().equals(pendingEvent)){
 				transition.setCondition(validity);
 			}
+			
 		}	
 		return this;
 	}
